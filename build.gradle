@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Rest Assured dependency
+    testImplementation 'io.rest-assured:rest-assured:4.4.0'
+    
+    // JUnit Jupiter API (version 5)
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    
+    // JUnit Jupiter Engine (for running tests)
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    // Use JUnit Platform for running tests
+    useJUnitPlatform()
+}
