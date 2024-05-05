@@ -445,6 +445,934 @@ public class Update_Test {
             .body("gender", equalTo(""));
     }
 
+    @Test
+    public void TC419() {
+        String userId = "60d0fe4f5311236168a109ff"; // Valid user ID
+        String appId = APP_ID; // Valid app ID
+    
+        // Request body with a long street name
+        String requestBody = "{\n" +
+                "  \"location\": {\n" +
+                "        \"street\": \"JalanSultanArabKidulBelahWetanKatapangCileunyiDiskotikAhayAseloleJossSenggolDonkDekLingSadboiNihBoss\",\n" +
+                "        \"city\": \"Orichuela\",\n" +
+                "        \"state\": \"Cheuta\",\n" +
+                "        \"country\": \"USA\",\n" +
+                "        \"timezone\": \"1:00\"\n" +
+                "    }\n" +
+                "}";
+    
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(200)
+            .body("id", equalTo(userId))
+            .body("location.street", equalTo("JalanSultanArabKidulBelahWetanKatapangCileunyiDiskotikAhayAseloleJossSenggolDonkDekLingSadboiNihBoss"));
+    }
+
+    @Test
+    public void TC420() {
+        String userId = "60d0fe4f5311236168a109ff"; // Valid user ID
+        String appId = APP_ID; // Valid app ID
+
+        // Request body with a long street name
+        String requestBody = "{\n" +
+                "  \"location\": {\n" +
+                "        \"street\": \"JalanSultanArabKidulBelahWetanKatapangCileunyiDiskotikAhayAseloleJossSenggolDonkDekLingSadboiNihBoss\",\n" +
+                "        \"city\": \"Orichuela\",\n" +
+                "        \"state\": \"Cheuta\",\n" +
+                "        \"country\": \"USA\",\n" +
+                "        \"timezone\": \"1:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(200)
+            .body("id", equalTo(userId))
+            .body("location.street", equalTo("JalanSultanArabKidulBelahWetanKatapangCileunyiDiskotikAhayAseloleJossSenggolDonkDekLingSadboiNihBoss"));
+    }
+    @Test
+    public void TC421() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"location\": {\n" +
+                "        \"street\": \"JalanSultanArabKidulBelahWetanKatapangCileunyiDiskotikAhayAseloleJossSenggolDonkDekLingSadboiNihBoss\",\n" +
+                "        \"city\": \"Or\",\n" +
+                "        \"state\": \"Cheuta\",\n" +
+                "        \"country\": \"USA\",\n" +
+                "        \"timezone\": \"1:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(200)
+            .body("id", equalTo(userId))
+            .body("location.city", equalTo("Or"));
+    }
+    @Test
+    public void TC422() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"location\": {\n" +
+                "        \"street\": \"JalanSultanArabKidulBelahWetanKatapangCileunyiDiskotikAhayAseloleJossSenggolDonkDekLingSadboiNihBoss\",\n" +
+                "        \"city\": \"TchallaMaungHideungTiWakandaaa\",\n" +
+                "        \"state\": \"Cheuta\",\n" +
+                "        \"country\": \"USA\",\n" +
+                "        \"timezone\": \"1:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(200)
+            .body("id", equalTo(userId))
+            .body("location.city", equalTo("TchallaMaungHideungTiWakandaaa"));
+    }
+
+    @Test
+    public void TC423() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"location\": {\n" +
+                "        \"street\": \"JalanSultanArabKidulBelahWetanKatapangCileunyiDiskotikAhayAseloleJossSenggolDonkDekLingSadboiNihBoss\",\n" +
+                "        \"city\": \"TchallaMaungHideungTiWakandaaa\",\n" +
+                "        \"state\": \"Ch\",\n" +
+                "        \"country\": \"USA\",\n" +
+                "        \"timezone\": \"1:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(200)
+            .body("id", equalTo(userId))
+            .body("location.state", equalTo("Ch"));
+    }
+
+    @Test
+    public void TC424() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"location\": {\n" +
+                "        \"street\": \"JalanSultanArabKidulBelahWetanKatapangCileunyiDiskotikAhayAseloleJossSenggolDonkDekLingSadboiNihBoss\",\n" +
+                "        \"city\": \"TchallaMaungHideungTiWakandaaa\",\n" +
+                "        \"state\": \"SultanAbdulMusallihAlaMuhammad\",\n" +
+                "        \"country\": \"USA\",\n" +
+                "        \"timezone\": \"1:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(200)
+            .body("id", equalTo(userId))
+            .body("location.state", equalTo("SultanAbdulMusallihAlaMuhammad"));
+    }
+
+    @Test
+    public void TC425() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"location\": {\n" +
+                "        \"street\": \"JalanSultanArabKidulBelahWetanKatapangCileunyiDiskotikAhayAseloleJossSenggolDonkDekLingSadboiNihBoss\",\n" +
+                "        \"city\": \"TchallaMaungHideungTiWakandaaa\",\n" +
+                "        \"state\": \"SultanAbdulMusallihAlaMuhammad\",\n" +
+                "        \"country\": \"UK\",\n" +
+                "        \"timezone\": \"1:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(200)
+            .body("id", equalTo(userId))
+            .body("location.country", equalTo("UK"));
+    }
+
+    @Test
+    public void TC426() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"location\": {\n" +
+                "        \"street\": \"JalanSultanArabKidulBelahWetanKatapangCileunyiDiskotikAhayAseloleJossSenggolDonkDekLingSadboiNihBoss\",\n" +
+                "        \"city\": \"TchallaMaungHideungTiWakandaaa\",\n" +
+                "        \"state\": \"SultanAbdulMusallihAlaMuhammad\",\n" +
+                "        \"country\": \"NegaraIsraelAncurinAjahLaTuman\",\n" +
+                "        \"timezone\": \"1:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(200)
+            .body("id", equalTo(userId))
+            .body("location.country", equalTo("NegaraIsraelAncurinAjahLaTuman"));
+    }
+
+    @Test
+    public void TC427() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"email\" : \"emails@example.com\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC428() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"dateOfBirth\" : \"29 November 2002\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC429() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"picture\" : \"KepoAjahSihElu\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC430() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"firstName\" : \"B\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC431() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"firstName\" : \"AhmadAbrorAbraKadabraAllaihimuSalamWassalamualaikum\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC432() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"lastName\" : \"C\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC433() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"lastName\" : \"AhBuAsriLieurIeuNahaBisaUpdateLimaPuluhSatuKarakter\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC434() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"firstName\" : 69\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC435() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"lastName\" : 25\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC436() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"title\" : 24\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC437() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"title\" : \"tua\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC438() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"gender\" : 69\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC439() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "  \"gender\" : \"banci\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC440() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"dateOfBirth\" : \"29-11-1899\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC441() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"dateOfBirth\" : \"29-11-2027\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC442() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": \"Kepo\",\n" +
+                "        \"city\": \"Plymouth\",\n" +
+                "        \"state\": \"Berkshire\",\n" +
+                "        \"country\": \"United Kingdom\",\n" +
+                "        \"timezone\": \"-10:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    // Test case 43
+    @Test
+    public void TC443() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String longStreetName = "AhBuPusingKokBisaMasukinSeratusSatuKarakterKeNamaJalanBukannyaHarusnyaGakBisaYaBuGimanaYaBuWebsitenya";
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": \"" + longStreetName + "\",\n" +
+                "        \"city\": \"Plymouth\",\n" +
+                "        \"state\": \"Berkshire\",\n" +
+                "        \"country\": \"United Kingdom\",\n" +
+                "        \"timezone\": \"-10:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC444() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": 1900,\n" +
+                "        \"city\": \"Plymouth\",\n" +
+                "        \"state\": \"Berkshire\",\n" +
+                "        \"country\": \"United Kingdom\",\n" +
+                "        \"timezone\": \"-10:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    // Test case 45
+    @Test
+    public void TC445() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": \"AiyoWTF\",\n" +
+                "        \"city\": \"B\",\n" +
+                "        \"state\": \"Berkshire\",\n" +
+                "        \"country\": \"United Kingdom\",\n" +
+                "        \"timezone\": \"-10:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    @Test
+    public void TC446() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": \"AiyoWTF\",\n" +
+                "        \"city\": \"IbuIniKokBisaTigaPuluhSatuHuruf\",\n" +
+                "        \"state\": \"Berkshire\",\n" +
+                "        \"country\": \"United Kingdom\",\n" +
+                "        \"timezone\": \"-10:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    // Test case 47
+    @Test
+    public void TC447() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": \"AiyoWTF\",\n" +
+                "        \"city\": 71,\n" +
+                "        \"state\": \"Berkshire\",\n" +
+                "        \"country\": \"United Kingdom\",\n" +
+                "        \"timezone\": \"-10:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    // Test case 48
+    @Test
+    public void TC448() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": \"5508, New Street\",\n" +
+                "        \"city\": \"Plymouth\",\n" +
+                "        \"state\": \"H\",\n" +
+                "        \"country\": \"United Kingdom\",\n" +
+                "        \"timezone\": \"-10:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    // Test case 49
+    @Test
+    public void TC449() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": \"5508, New Street\",\n" +
+                "        \"city\": \"Plymouth\",\n" +
+                "        \"state\": \"IbuIniKokBisaTigaPuluhSatuHuruf\",\n" +
+                "        \"country\": \"United Kingdom\",\n" +
+                "        \"timezone\": \"-10:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    // Test case 50
+    @Test
+    public void TC450() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": \"5508, New Street\",\n" +
+                "        \"city\": \"Plymouth\",\n" +
+                "        \"state\": 96,\n" +
+                "        \"country\": \"United Kingdom\",\n" +
+                "        \"timezone\": \"-10:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+    @Test
+    public void TC451() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": \"5508, New Street\",\n" +
+                "        \"city\": \"Plymouth\",\n" +
+                "        \"state\": \"Berkshire\",\n" +
+                "        \"country\": \"C\",\n" +
+                "        \"timezone\": \"-10:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    // Test case 52
+    @Test
+    public void TC452() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": \"5508, New Street\",\n" +
+                "        \"city\": \"Plymouth\",\n" +
+                "        \"state\": \"Berkshire\",\n" +
+                "        \"country\": \"IbuIniKokBisaTigaPuluhSatuHuruf\",\n" +
+                "        \"timezone\": \"-10:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    // Test case 53
+    @Test
+    public void TC453() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": \"5508, New Street\",\n" +
+                "        \"city\": \"Plymouth\",\n" +
+                "        \"state\": \"Berkshire\",\n" +
+                "        \"country\": 71,\n" +
+                "        \"timezone\": \"-10:00\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    // Test case 54
+    @Test
+    public void TC454() {
+        String userId = "60d0fe4f5311236168a109ff";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "   \"location\": {\n" +
+                "        \"street\": \"5508, New Street\",\n" +
+                "        \"city\": \"Plymouth\"\n" +
+                "    }\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("BODY_NOT_VALID"));
+    }
+
+    // Test case 55
+    @Test
+    public void TC455() {
+        String userId = "60d0fe4f5311236168a109fg";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "    \"title\": \"mr\",\n" +
+                "    \"firstName\": \"Tatang\",\n" +
+                "    \"lastName\": \"BaksoAbrag\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(404)
+            .body("error", equalTo("RESOURCE_NOT_FOUND"));
+    }
+
+    @Test
+    public void TC456() {
+        String userId = "213";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "    \"title\": \"mr\",\n" +
+                "    \"firstName\": \"Tatang\",\n" +
+                "    \"lastName\": \"BaksoAbrag\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("PARAMS_NOT_VALID"));
+    }
+
+    // Test case 57
+    @Test
+    public void TC457() {
+        String userId = "";
+        String appId = APP_ID;
+
+        String requestBody = "{\n" +
+                "    \"title\": \"mr\",\n" +
+                "    \"firstName\": \"Tatang\",\n" +
+                "    \"lastName\": \"BaksoAbrag\"\n" +
+                "}";
+
+        given()
+            .body(requestBody)
+            .header("app-id", appId)
+            .contentType("application/json")
+        .when()
+            .put(BASE_URL + USER_ENDPOINT + userId)
+        .then()
+            .statusCode(404)
+            .body("error", equalTo("PATH_NOT_FOUND"));
+    }
 
 
     
