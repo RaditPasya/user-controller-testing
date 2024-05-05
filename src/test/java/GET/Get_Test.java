@@ -13,7 +13,7 @@ public class Get_Test {
     private static final String POST_ENDPOINT = "post/";
 
     // Global APP_ID variable
-    private static final String APP_ID = "663740a560f331ce55a47ca8"; // Change this to your valid app ID
+    private static final String APP_ID = "663799321319330c7fc3842e"; // Change this to your valid app ID
 
     @Test
     public void TC101() {

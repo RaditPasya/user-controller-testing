@@ -9,7 +9,7 @@ public class Delete_Test {
     private static final String BASE_URL = "https://dummyapi.io/data/v1/";
     // Define endpoint paths
     private static final String USER_ENDPOINT = "user/";
-    private static final String APP_ID = "663740a560f331ce55a47ca8";
+    private static final String APP_ID = "663799321319330c7fc3842e";
 
     // Test case 1-01
     @Test
